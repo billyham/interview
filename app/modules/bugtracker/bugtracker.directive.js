@@ -90,7 +90,12 @@ function bugtracker(BugsService) {
      * @param data {object}
      */
     $scope.updateBug = function(data) {
-      // TODO - update bug
+      // DONE - update bug
+      BugsService.update(data)
+      .then( data => {
+        let updateIndex = _bugs.findIndex( e => e.id === data.id);
+        if (updateIndex > -1) _bugs[updateIndex] = data;
+      })
     };
 
     // ---------------------------------------------

@@ -63,7 +63,15 @@ function BugsService($http) {
    * @returns {Promise}
    */
   function update(payload) {
-    // TODO - update single bug
+    // DONE - update single bug
+    return $http({
+      url: `http://localhost:3000/bugs/${payload.id}`,
+      method: 'PUT',
+      data: payload
+    })
+    .then( response => {
+      return response.data;
+    })
   }
 
   return {
