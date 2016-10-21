@@ -17,7 +17,13 @@ function BugsService($http) {
    * @returns {Promise}
    */
   function create(payload) {
-    // TODO - use POST to create new bug
+    // DONE - use POST to create new bug
+    return $http({
+      url: 'http://localhost:3000/bugs',
+      method: 'POST',
+      data: payload
+    })
+    .then(response => response.data)
   }
 
   /**
@@ -28,7 +34,11 @@ function BugsService($http) {
    * @returns {Promise}
    */
   function del(id) {
-    // TODO - use DELETE to remove a bug
+    // DONE - use DELETE to remove a bug
+    return $http({
+      url: `http://localhost:3000/bugs/${id}`,
+      method: 'DELETE'
+    })
   }
 
   /**

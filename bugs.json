@@ -1,13 +1,6 @@
 {
   "bugs": [
     {
-      "id": 1,
-      "userId": 1,
-      "description": "clean up all those console logs!",
-      "points": 1,
-      "completed": true
-    },
-    {
       "userId": 1,
       "id": 2,
       "description": "add service calls",
@@ -26,13 +19,6 @@
       "id": 4,
       "description": "set up new desk",
       "points": 8,
-      "completed": true
-    },
-    {
-      "userId": 1,
-      "id": 5,
-      "description": "prep meeting notes",
-      "points": 2,
       "completed": true
     },
     {
@@ -62,13 +48,6 @@
       "description": "finish designing mockups",
       "points": 8,
       "completed": false
-    },
-    {
-      "userId": 1,
-      "id": 10,
-      "description": "write up meeting notes",
-      "points": 2,
-      "completed": true
     },
     {
       "userId": 1,

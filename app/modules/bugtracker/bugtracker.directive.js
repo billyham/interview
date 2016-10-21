@@ -34,6 +34,8 @@ function bugtracker(BugsService) {
     initForm();
     loadList();
 
+
+
     // ----------------------------------------
     // --------- service calls ----------------
     // --- demonstrate promises / api calls ---
@@ -57,7 +59,12 @@ function bugtracker(BugsService) {
      * @param data {object} - the bug to be created (object)
      */
     $scope.addNewBug = function(data) {
-      // TODO - create new bug entry.
+      // DONE - create new bug entry.
+      BugsService.create(data)
+      .then( data => {
+        _bugs.push(data);
+        initForm();
+      })
     };
 
     /**
@@ -68,7 +75,12 @@ function bugtracker(BugsService) {
      * @param data {object} - the bug (object) to be deleted
      */
     $scope.deleteBug = function(data) {
-      // TODO - delete the bug
+      // DONE - delete the bug
+      BugsService.delete(data.id)
+      .then( () => {
+        let delIndex = _bugs.findIndex( e => e.id === data.id);
+        if (delIndex > -1) _bugs.splice(delIndex, 1);
+      })
     };
 
     /**
@@ -95,7 +107,9 @@ function bugtracker(BugsService) {
      * ex: return an array of bugs that match the appropriate status
      */
     $scope.filteredList = function(completedFilter) {
-      // TODO - use filter prototype to return array of bugs that match the radio selection
+      // DONE - use filter prototype to return array of bugs that match the radio selection
+      if (completedFilter === 'all') return _bugs;
+      return _bugs.filter( e => e.completed === (completedFilter === 'true') ? true : false);
     };
 
     /**
