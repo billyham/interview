@@ -128,7 +128,14 @@ function bugtracker(BugsService) {
      * ex: show me the sum of all the 4 point bugs that are marked "done".
      */
     $scope.getSum = function(pointValue, completedFilter) {
-      // TODO - use array reducer to calculate totals of each point value
+      // DONE - use array reducer to calculate totals of each point value
+      return $scope.filteredList(completedFilter)
+      .filter( e => {
+        return e.points === pointValue;
+      })
+      .reduce( (acc, current) => {
+        return acc += current.points;
+      }, 0);
     };
 
     /**
@@ -142,7 +149,14 @@ function bugtracker(BugsService) {
      * ex: show me the number of 4 point bugs that are marked "done".
      */
     $scope.getTotal = function(pointValue, completedFilter) {
-      // TODO - use array filter to calculate totals of each point value
+      // DONE - use array filter to calculate totals of each point value
+      return $scope.filteredList(completedFilter)
+      .filter( e => {
+        return e.points === pointValue;
+      })
+      .reduce( (acc) => {
+        return ++acc;
+      },0);
     };
 
   }
