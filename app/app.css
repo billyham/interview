@@ -1,3 +1,150 @@
 /*
-  TODO - styling goes in here
+  DONE - styling goes in here
 */
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/* Font
+   ========================================================================== */
+ h1, h2, h3, h4, h5, p, div, option, label{
+   font-family: helvetica, sans-serif;
+   font-weight: 200;
+ }
+
+ h1, h2 {
+   font-weight: 500;
+ }
+
+ h3 {
+   font-weight: 400;
+ }
+
+/* Color
+   ========================================================================== */
+ body{
+  background-color: hsla(1, 0%, 90%, 1);
+ }
+
+ body div{
+   background-color: hsla(1, 0%, 80%, 1);
+ }
+
+ h1, h2, h3, h4, h5, p, div, option, label{
+  color: hsla(1, 0%, 0%, 1);
+ }
+
+ h1 {
+   background-color: hsla(1, 0%, 80%, 1);
+ }
+
+/* Margin, Padding, Border
+   ========================================================================== */
+ body, div, td, tr, h1, h2, h3, h4, h5 {
+   margin: 0;
+   padding: 0;
+   border: 0;
+ }
+
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+body {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+body div {
+    padding: 1em;
+}
+
+h1{
+  padding: .25em 1.5em;
+}
+
+h2, h3 {
+  margin: .5em 0;
+}
+
+table {
+  width: 100%;
+  padding: 2em 1em;
+  border-collapse: collapse;
+  margin-bottom: 2em;
+}
+
+td {
+  padding: .125em 1em;
+}
+
+input[type="radio"], select {
+  margin-right: 3em;
+}
+
+input[type="submit"], input[type="button"] {
+  border: 0;
+  padding: .5em 2em;
+}
+
+input[type="text"]{
+  width: 40%;
+  min-width: 5em;
+  border: 0;
+  padding: .5em .25em;
+  margin: 0 1em;
+}
+
+select{
+  width: 5em;
+}
+
+
+/* ==========================================================================
+   Module
+   ========================================================================== */
+
+/* Form
+  ========================================================================== */
+input, select {
+  cursor: pointer;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover{
+  background-color: hsla(30, 40%, 50%, .3);
+}
+
+input[type="text"] {
+  cursor: auto;
+}
+
+/* Table
+   ========================================================================== */
+table {
+  border-top: 1px solid hsla(1, 0%, 50%, 1);
+}
+
+tr:nth-child(odd){
+  background-color: hsla(1, 0%, 85%, 1);
+}
+
+th{
+  background-color: hsla(1, 0%, 80%, 1);
+}
+
+th {
+  padding: .5em 0;
+}
+
+td, th {
+  text-align: center;
+  border-left: 1px solid hsla(1, 0%, 50%, 1);
+}
+
+td:first-child, th:first-child{
+  border: 0;
+}
+
+td.description {
+  text-align: left;
+}
